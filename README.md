@@ -1,7 +1,3 @@
-# TSNH Create React App Typescript Template
+# TSNH Handcraft
 
-### This template includes
-+ Every configuration of Create React App
-+ Typescript
-+ SCSS
-+ ESLint + Prettier plugins
+Everything is handmade, no external libraries, just React and Typescript
