@@ -32,11 +32,13 @@ const Slider: React.FC<ISliderProps> = ({ value, onChange, min, max }) => {
     }
 
     const handleMouseUp = () => {
+      if (isMouseDown.current === true) {
+        setInternalValue((internalValue) => {
+          onChange?.(internalValue)
+          return internalValue
+        })
+      }
       isMouseDown.current = false
-      setInternalValue((internalValue) => {
-        onChange?.(internalValue)
-        return internalValue
-      })
     }
 
     const handleMouseMove = (event: MouseEvent) => {
@@ -64,9 +66,26 @@ const Slider: React.FC<ISliderProps> = ({ value, onChange, min, max }) => {
     }
   }, [])
 
+  const handleBgClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
+    const { x = 0, width = 0 } = bgRef.current?.getBoundingClientRect() as {
+      x: number
+      width: number
+    }
+    const { pageX } = e
+
+    if (pageX >= x && pageX <= x + width) {
+      const left = pageX - x - 4
+      const newValue = Math.ceil((left / width) * (max - min))
+      setLeft(Math.ceil((left / width) * 100))
+      setInternalValue(newValue)
+      onChange?.(newValue)
+    }
+  }
+
   return (
     <div className={styles.wrapper}>
-      <div ref={bgRef} className={styles.bg} />
+      <div ref={bgRef} className={styles.bg} onClick={handleBgClick} />
+
       <div ref={holderRef} className={styles.holder} style={{ left: `${left}%` }}>
         <div className={styles.circle} />
       </div>
