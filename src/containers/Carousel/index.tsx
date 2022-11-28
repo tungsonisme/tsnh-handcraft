@@ -10,15 +10,13 @@ export interface ICarouselProps {
 
 const SPEED = 1
 
-// 0 * 0,5 * 1 * 1.5 * 2
-
 const Carousel: React.FC<ICarouselProps> = ({ contents }) => {
   const wrapperRef = React.useRef<HTMLDivElement>(null)
   const isMouseDown = React.useRef(false)
   const [x, setX] = React.useState(0)
 
   React.useEffect(() => {
-    const handleMouseDown = (e: MouseEvent) => {
+    const handleMouseDown = () => {
       isMouseDown.current = true
     }
 
