@@ -1,4 +1,5 @@
 import React from "react"
+import Carousel from "../Carousel"
 import Slider from "../Slider"
 
 const App: React.FC = () => {
@@ -6,7 +7,15 @@ const App: React.FC = () => {
   return (
     <div style={{ padding: 24 }}>
       <Slider value={slider} onChange={setSlider} min={0} max={100} />
-      <div>Slider Value: {slider}</div>
+      <div style={{ marginBottom: 24 }}>Slider Value: {slider}</div>
+
+      <Carousel
+        contents={[
+          { key: "A", content: <div style={{ background: "blue" }} /> },
+          { key: "B", content: <div style={{ background: "yellow" }} /> },
+          { key: "C", content: <div style={{ background: "orange" }} /> },
+        ]}
+      />
     </div>
   )
 }
