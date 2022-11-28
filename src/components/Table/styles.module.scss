@@ -1,0 +1,76 @@
+.wrapper {
+  position: relative;
+}
+
+.headerRow, .row {
+  display: grid;
+  width: 100%;
+}
+
+.headerRowCol, .rowCol {
+  border: 1px solid black;
+  padding: 4px;
+  background-color: white;
+}
+
+.headerRowCol {
+  background-color: lightgray;
+  border-bottom: 0
+}
+
+.headerRowCol:not(:last-child),
+.rowCol:not(:last-child) {
+  border-right: 0;
+}
+
+.row:not(:last-child) {
+  .rowCol {
+    border-bottom: 0;
+  }
+}
+
+.header,
+.body {
+  overflow: auto;
+}
+
+.header {
+  overflow: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.stickyHeaderTable {
+  .headerRowCol {
+    border-bottom: 1px solid black;
+  }
+
+  .body {
+    border-bottom: 1px solid black;
+
+    .rowCol {
+      border-bottom: 0;
+    }
+
+    .row:first-child .rowCol {
+      border-top: 0;
+    }
+  }
+}
+
+.fixedLeft {
+  position: absolute;
+  left: 1px;
+  top: 0;
+}
+
+.tableWithFixedLeft {
+  border: 1px solid black;
+  border-top: 0;
+
+  .body {
+    padding-bottom: 10px;
+  }
+}
