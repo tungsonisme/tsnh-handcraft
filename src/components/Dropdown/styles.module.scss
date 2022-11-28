@@ -5,16 +5,18 @@
 .content {
   display: flex;
   align-items: center;
-  height: 30px;
+  height: 22px;
   border: 1px solid lightgray;
   cursor: pointer;
+  padding: 4px;
 }
 
 .dropdown {
+  padding: 4px;
   position: absolute;
   top: 30px;
   border: 1px solid lightgray;
-  width: calc(100% - 2px);
+  width: calc(100% - 10px);
   background-color: lightgray;
   visibility: hidden;
   opacity: 0;

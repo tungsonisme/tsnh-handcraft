@@ -54,17 +54,30 @@ const Carousel: React.FC<ICarouselProps> = ({ contents }) => {
     }
   }, [])
 
-  const handleLeftClick = () => {
+  const handleLeftClick: React.MouseEventHandler = (e) => {
+    e.stopPropagation()
+
+    if (x === 0) {
+      return
+    }
+
     const { width } = wrapperRef.current?.getBoundingClientRect() as {
       width: number
     }
     setX((currentX) => currentX + width)
   }
 
-  const handleRightClick = () => {
+  const handleRightClick: React.MouseEventHandler = (e) => {
+    e.stopPropagation()
+
     const { width } = wrapperRef.current?.getBoundingClientRect() as {
       width: number
     }
+
+    if (x === -width * (contents.length - 1)) {
+      return
+    }
+
     setX((currentX) => currentX - width)
   }
 

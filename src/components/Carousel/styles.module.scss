@@ -23,14 +23,14 @@
   position: absolute;
   left: 20px;
   top: calc(50% - 20px);
-  background-color: white;
   cursor: pointer;
+  user-select: none;
 }
 
 .right {
   position: absolute;
   right: 20px;
   top: calc(50% - 20px);
-  background-color: white;
   cursor: pointer;
+  user-select: none;
 }
