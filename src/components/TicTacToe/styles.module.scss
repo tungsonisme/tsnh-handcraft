@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.winner1 {
+  background-color: orange;
+}
+
+.winner2 {
+  background-color: greenyellow;
+}
+
+.round {
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.cross {
+  > div {
+    width: 36px;
+    height: 2px;
+    background-color: black;
+
+    &:nth-child(1) {
+      transform: rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      margin-top: -2px; 
+      transform: rotate(-45deg);
+    }
+  }
+}

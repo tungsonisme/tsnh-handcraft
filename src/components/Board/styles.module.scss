@@ -1,0 +1,22 @@
+.wrapper {
+  display: inline-grid;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.box {
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whiteBox {
+  background: white;
+}
+
+.blackBox {
+  background: black;
+}
