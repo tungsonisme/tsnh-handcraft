@@ -1,0 +1,24 @@
+.item,
+.freeItem,
+.cover {
+  background-color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.item {
+  position: relative;
+}
+
+.freeItem {
+  position: fixed;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border: 1px dashed black;
+}
